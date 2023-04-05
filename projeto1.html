@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exemplo de Loops em JavaScript</title>
+  </head>
+  <body>
+    <h1>Loops em JavaScript</h1>
+    <label for="loop-select">Escolha um loop:</label>
+    <select id="loop-select">
+      <option value="for">For</option>
+      <option value="while">While</option>
+    </select>
+    <button id="run-btn">Executar</button>
+    <h2>Resultado:</h2>
+    <ul id="result-list"></ul>
+
+    <script>
+      let loopSelect = document.getElementById("loop-select");
+      let runBtn = document.getElementById("run-btn");
+      let resultList = document.getElementById("result-list");
+
+      runBtn.addEventListener("click", function() {
+        resultList.innerHTML = "";
+        let loopType = loopSelect.value;
+        if (loopType === "for") {
+          for (let i = 1; i <= 10; i++) {
+            let li = document.createElement("li");
+            li.textContent = i;
+            resultList.appendChild(li);
+          }
+        } else if (loopType === "while") {
+          let j = 1;
+          while (j <= 10) {
+            let li = document.createElement("li");
+            li.textContent = j;
+            resultList.appendChild(li);
+            j++;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
